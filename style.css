@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+:root {
+  --Red: hsl(1, 90%, 64%);
+  --Blue: hsl(219, 85%, 26%);
+  --White: hsl(0, 0%, 100%);
+  --Very-light-grayish-blue: hsl(210, 60%, 98%);
+  --Light-grayish-blue-1: hsl(211, 68%, 94%);
+  --Light-grayish-blue-2: hsl(205, 33%, 90%);
+  --Grayish-blue: hsl(219, 14%, 63%);
+  --Dark-grayish-blue: hsl(219, 12%, 42%);
+  --Very-dark-blue: hsl(224, 21%, 14%);
+  --font-family: "Plus Jakarta Sans", sans-serif;
+  --font-weight-500: 500;
+  --font-weight-800: 800;
+}
+.container-app {
+  width: 100%;
+  background-color: var(--Very-light-grayish-blue);
+  display: grid;
+  place-items: center;
+}
+.notifications {
+  width: 50vw;
+  background-color: var(--White);
+  padding: 2rem 1.5rem;
+  border-radius: 1em;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.notifications-header {
+  color: var(--Very-dark-blue);
+  margin-bottom: 1rem;
+}
+#unread-count {
+  color: var(--White);
+  background-color: var(--Very-dark-blue);
+  display: inline-block;
+  padding-inline: 0.5rem;
+  height: min-content;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin-inline-start: 0.5rem;
+}
+#mark-read {
+  color: var(--Grayish-blue);
+  cursor: pointer;
+}
+.notificacions > * + * {
+  margin-top: 1rem;
+}
+.Notification {
+  display: flex;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.Notification > img {
+  width: 2.5rem;
+  height: 2.5rem;
+  aspect-ratio: 1/1;
+  margin-inline-end: 1rem;
+}
+.Notification[data-unread] {
+  background-color: var(--Light-grayish-blue-1);
+}
+.Notification[data-unread]::after {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  aspect-ratio: 1/1;
+  background-color: var(--Red);
+  border-radius: 50%;
+  margin-inline-start: 0.5rem;
+  position: relative;
+  top: 6px;
+}
+.notification-text {
+  color: var(--Dark-grayish-blue);
+}
+.username {
+  color: var(--Very-dark-blue);
+  font-weight: var(--font-weight-800);
+}
+.highlighed-message {
+  color: var(--Dark-grayish-blue);
+  font-weight: var(--font-weight-800);
+}
+.chess-club {
+  color: var(--Blue);
+  font-weight: var(--font-weight-800);
+}
+.timestamp {
+  font-size: 0.9rem;
+  color: var(--Grayish-blue);
+}
+.complete-message {
+  margin-top: 1rem;
+  border: 1px solid var(--Light-grayish-blue-1);
+  padding: 1rem;
+}
+.complete-message:hover {
+  background-color: var(--Light-grayish-blue-1);
+  cursor: pointer;
+}
+.post-pic {
+  align-self: center;
+  margin-left: auto;
+}
+/* Hover states */
+.username:hover,
+.highlighed-message:hover {
+  color: var(--Blue);
+  cursor: pointer;
+}
+#mark-read:hover {
+  color: var(--Blue);
+}
+.post-pic:hover {
+  border: 1px solid var(--Light-grayish-blue-1);
+  border-radius: 10px;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 800px) {
+  .notifications {
+    width: 100vw;
+  }
+}
